@@ -3,19 +3,17 @@ using System.Threading.Tasks;
 
 namespace SMSSender.REST.Helpers
 {
+    public enum Contact
+    {
+        A, B, C
+    }
+
     public static class ConfigurationHelper
     {
         public static Task<string> GetClockworkApiKeyAsync() { return Task.Factory.StartNew(GetClockworkApiKey); }
         public static string GetClockworkApiKey()
         {
             string value = ConfigurationManager.AppSettings["Clockwork_APIKey"];
-            return !string.IsNullOrEmpty(value) ? value : null;
-        }
-
-        public static Task<string> GetTextMessageReceiveKeywordAsync() { return Task.Factory.StartNew(GetTextMessageReceiveKeyword); }
-        public static string GetTextMessageReceiveKeyword()
-        {
-            string value = ConfigurationManager.AppSettings["Clockwork_Receive_Keyword"];
             return !string.IsNullOrEmpty(value) ? value : null;
         }
 
