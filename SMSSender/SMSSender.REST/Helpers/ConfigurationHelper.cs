@@ -5,7 +5,7 @@ namespace SMSSender.REST.Helpers
 {
     public enum Contact
     {
-        A, B, C
+        Error, A, B, C
     }
 
     public static class ConfigurationHelper
