@@ -33,6 +33,13 @@ namespace SMSSender.REST.Helpers
             return null;
         }
 
+        public static Task<string> GetAccessTokensAsync() { return Task.Factory.StartNew(GetAccessTokens); }
+        public static string GetAccessTokens()
+        {
+            string value = ConfigurationManager.AppSettings["AccessTokens"];
+            return !string.IsNullOrEmpty(value) ? value : null;
+        }
+
         public static Task<string> GetContactANumberAsync() { return Task.Factory.StartNew(GetContactANumber); }
         public static string GetContactANumber()
         {
